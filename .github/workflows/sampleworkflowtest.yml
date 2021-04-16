@@ -1,0 +1,17 @@
+name: Test the sample workflow with AZ cli first
+on: push
+env:
+  RG : AI-900
+  Sub : c4b4b12e-5473-49e1-b8f7-381858848ba3
+  
+jobs:
+  deploy-storage-account:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Azure login
+       uses: azure/login@v1
+        -with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
+      -run: |
+          az storage account create --name teststorage11227788df  --resource-group ${{ env.RG }} --subscription ${{ env.Sub }}
