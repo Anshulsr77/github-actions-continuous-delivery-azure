@@ -8,9 +8,9 @@ jobs:
   deploy-storage-account:
     runs-on: ubuntu-latest
     steps:
-      -uses: azure/login@v1
-       with:
+    - uses: azure/login@v1
+      with:
          creds: ${{ secrets.AZURE_CREDENTIALS }}
           
-      -run: |
+    - run: |
           az storage account create --name teststorage11227788df  --resource-group ${{ env.RG }} --subscription ${{ env.Sub }}
