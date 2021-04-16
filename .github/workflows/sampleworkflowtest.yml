@@ -1,5 +1,5 @@
 name: Test the sample workflow with AZ cli first
-on: push
+on: workflow_dispatch
 env:
   RG : AI-900
   Sub : c4b4b12e-5473-49e1-b8f7-381858848ba3
