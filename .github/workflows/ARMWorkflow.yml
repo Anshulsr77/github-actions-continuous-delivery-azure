@@ -1,0 +1,24 @@
+name: Deploy resources using ARM template and github actions via REST API
+on : worklflow_dispatch
+
+env:
+  RG: AI-900
+  Sub: c4b4b12e-5473-49e1-b8f7-381858848ba3
+  
+
+jobs:
+ runs-on: ubuntu-latest
+ steps:
+ - name: Azure login
+   uses: azure/login@v1
+    with: 
+     creds: ${{ secrets.AZURE_CREDENTIALS}}
+     
+ -uses: actions/checkout@v1
+ 
+ #Template Deployment
+ -name: Deploy ARM template
+  uses: azure/arm-deploy@v1
+   with:
+    
+ 
