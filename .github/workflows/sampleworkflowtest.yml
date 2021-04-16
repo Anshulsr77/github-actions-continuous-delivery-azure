@@ -1,4 +1,5 @@
-name: Test the sample workflow with AZ cli first
+name: Test the sample workflow with AZ cli first then REST API
+# Created a PAT in Developer settings and then used it for authentication in API request using Postman
 on: workflow_dispatch
 env:
   RG : AI-900
